@@ -3,7 +3,7 @@ IPC entry point for local non-http interprocess communication
 
 # Quickstart
 
-The library contains a simple IpcCommandExecutor implementation `EchoExecutor` that writes all of its input to its output.
+The library contains a simple IpcCommandExecutor implementation `EchoExecutor` that writes the given input data to its output stream.
 
 To see this working on a unix computer, take the following steps:
 
