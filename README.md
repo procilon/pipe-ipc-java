@@ -7,7 +7,8 @@ The library contains a simple example implementation of the `IpcCommandExecutor`
 
 To see this working on a unix computer, take the following steps:
 
-0) required installed software:
+## Prerequisites
+The following software is expected to be installed in order to follow this tutorial:
 
 * git
 * maven
