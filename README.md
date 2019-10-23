@@ -3,8 +3,12 @@ IPC entry point for local non-http inter process communication for Java applicat
 
 # Quickstart
 
+This library will help you to implement the receiving side of inter process communication outside of stdin, stdout and stderr. For example with Unix domain sockets.
 The library contains a simple example implementation of the `IpcCommandExecutor` interface. The `EchoExecutor` writes the given input data to to the output stream referenced in the command JSON.
 
+This quickstart guides you through starting the `EchoExecutor`, sending a command JSON, sending an input message and receiving output on the commandline.
+
+# Unix
 To see this working on a unix computer, take the following steps:
 
 ## Prerequisites
@@ -14,7 +18,10 @@ The following software is expected to be installed in order to follow this tutor
 * maven
 * netcat
 
-1) check out the code and build the classes (requires installed git and maven)
+
+## 1. Project setup
+
+Check out the code and build the classes (requires installed git and maven)
 
 ```
 $ git clone https://github.com/procilon/pipe-ipc-java
@@ -22,7 +29,13 @@ $ cd pipe-ipc-java
 $ mvn compile
 ```
 
-2) run netcat to create the command socket, the input socket and the output socket - since each command is non-stopping command, a new terminal should be used for each command.
+## Creating the communication channels
+
+This library implements the receiving end of the communication. This means that it expects the initiator (in this case we on the commandline) to create and manage the channels for the command JSONs, input and output. In this tutorial we use Unix domain sockets to send messages between different commandline windows.
+
+Open 3 terminal windows: one for sending a command JSON, that tells our executor what we want to do, one for sending an input message and one for receiving the resulting output message.
+
+In each window use netcat to create the respective socket in the tmp directory. This will start a process in each window.
 
 ```
 nc -lkU /tmp/command.sock
