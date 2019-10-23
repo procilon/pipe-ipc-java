@@ -1,5 +1,5 @@
 # pipe-ipc-java
-IPC entry point for local non-http interprocess communication
+IPC entry point for local non-http inter process communication for Java applications.
 
 # Quickstart
 
