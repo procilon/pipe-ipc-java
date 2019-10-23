@@ -16,7 +16,7 @@ To see this working on a unix computer, take the following steps:
 1) check out the code and build the classes (requires installed git and maven)
 
 ```
-$ git clone git@github.com:procilon/pipe-ipc-java.git
+$ git clone https://github.com/procilon/pipe-ipc-java
 $ cd pipe-ipc-java
 $ mvn compile
 ```
