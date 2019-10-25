@@ -24,9 +24,9 @@ The following software is expected to be installed in order to follow this tutor
 Check out the code and build the classes (requires installed git and maven)
 
 ```
-$ git clone https://github.com/procilon/pipe-ipc-java
-$ cd pipe-ipc-java
-$ mvn compile
+git clone https://github.com/procilon/pipe-ipc-java
+cd pipe-ipc-java
+mvn compile
 ```
 
 ## 2. Creating the communication channels
@@ -76,14 +76,14 @@ We have now successfully connected one of our terminal windows to the java appli
 
 With the help of our command window we can now send instructions to our PipeIPC. Depending on what command we send, input will be processed differently. Commands are expected to have this structure:
 
-`
+```
 {
   "type": <this decides which registered executor will process your input>,
   "requestPipe": <the full path to the pipe that is responsible for input>,
   "responsePipe": <the full path to the pipe that is responsible for the resulting output>,
   "arguments": <an object that contains additional arguments needed for the selected command>
  }
-`
+```
 
 In this tutorial we want to use the `EchoExecutor`. This simple executor takes input data and pushes it unchanged to the output stream. The `EchoExecutor` is registered under the type `echo`. To connect the echo executor with our input and output windows we need the following command JSON:
 
